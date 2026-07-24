@@ -1,2 +1,2 @@
 # Proyecto-final
-de Brahian rodriguez, Demian medina, Victor pereira Luis y Gilberto soto
+De Brahian Rodriguez, Demian Medina, Victor Pereira, Luis Ramirez y Gilberto Soto
