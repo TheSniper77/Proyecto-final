@@ -1,0 +1,55 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+.logo {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: auto;
+}
+
+.menu {
+text-align: center;
+  padding: 15px;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: red;
+}
+
+.apunte {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.publico {
+  background-color: lightgreen; /* verde suave */
+  color: black;
+}
+
+.privado {
+  background-color: lightcoral; /* rojo suave */
+  color: black;
+}
+
+.item {
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px dashed gray;
+}
