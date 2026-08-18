@@ -1,0 +1,139 @@
+-- Tabla usuarios
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    contrasenia VARCHAR(255) NOT NULL,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultimo_login TIMESTAMP
+);
+
+-- Tabla calendario
+CREATE TABLE calendario (
+    id_evento INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    titulo VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    fecha DATE NOT NULL,
+    hora TIME,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+-- Tabla archivos
+CREATE TABLE archivos (
+    id_archivo INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    nombre_archivo VARCHAR(150) NOT NULL,
+    ruta VARCHAR(255) NOT NULL,
+    fecha_subida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+-- Tabla apuntes
+CREATE TABLE apuntes (
+    id_apunte INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    titulo VARCHAR(150) NOT NULL,
+    contenido TEXT NOT NULL,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+-- Comandos relacionados a los usuarios
+
+-- Creamos o registramos lo usuarios
+INSERT INTO usuarios (nombre, email, usuario, contrasenia)
+VALUES ('Juan Perez', 'juan@example.com', 'juanp', 'claveEncriptada');
+INSERT INTO usuarios (nombre, email, usuario, contrasenia)
+VALUES ('Juan', 'jua@example.com', 'juan', 'Encriptada');
+INSERT INTO usuarios (nombre, email, usuario, contrasenia)
+VALUES ('Jose', 'jose@example.com', 'jose', 'Jose');
+
+/*
+-- Actualizamos el nombre del usuario con el id 1
+UPDATE usuarios
+SET nombre = 'Juan P Perez'
+WHERE id_usuario = 1;
+*/
+
+-- Borramos el usuario con el id 1
+-- DELETE FROM usuarios WHERE id_usuario = 1;
+
+-- Seleccionamos todos los usuarios de la tabla
+select * from usuarios;
+
+-- Comandos relacionados al calendario
+
+-- Creamos un evento
+INSERT INTO calendario (id_usuario, titulo, descripcion, fecha, hora)
+VALUES (1, 'Examen de Fisica', 'Capitulos 1 al 3', '2026-08-10', '09:00:00');
+
+INSERT INTO calendario (id_usuario, titulo, descripcion, fecha, hora)
+VALUES (2, 'Examen de matematicas', 'Funciones racionales', '2026-08-10', '15:30:00');
+        
+INSERT INTO calendario (id_usuario, titulo, descripcion, fecha, hora)
+VALUES (3, 'Examen de Fissica', 'Trabajo variable', '2026-08-10', '17:30:00');
+
+/*
+-- Editamos los evento
+UPDATE calendario
+SET titulo = 'Examen de Fisica Aula 2'
+WHERE id_evento = 1;
+*/
+
+-- Eliminamos un evento con el id 3
+-- DELETE FROM calendario WHERE id_evento = 3;
+
+-- Seleccionamos eventos del calendario
+SELECT * FROM calendario;
+
+-- Comandos relacionados a los archivos
+
+-- Subimos un archivo
+INSERT INTO archivos (id_usuario, nombre_archivo, ruta)
+VALUES (1, 'apunte_fisica.pdf', '/descargas/apunte_fisica.pdf');
+INSERT INTO archivos (id_usuario, nombre_archivo, ruta)
+VALUES (2, 'tareaingles.pdf', '/descargas/tareaingles.pdf');
+INSERT INTO archivos (id_usuario, nombre_archivo, ruta)
+VALUES (3, 'tareaFilosofia.docx', '/descargas/tareaFilosofia.docx');
+
+
+/*
+-- Editamos el nombre del archivo
+UPDATE archivos
+SET nombre_archivo = 'apunte_fisica_v2.pdf'
+WHERE id_archivo = 1;
+*/
+
+-- Eliminamos el archivo
+-- DELETE FROM archivos WHERE id_archivo = 2;
+
+-- Listamos los archivos de un usuario
+SELECT * FROM archivos;
+
+-- Comandos para los apuntes
+
+-- Creamos los apunte
+INSERT INTO apuntes (id_usuario, titulo, contenido)
+VALUES (1, 'Apunte de Matematica', 'Contenido del apunte...');
+INSERT INTO apuntes (id_usuario, titulo, contenido)
+VALUES (2, 'Apunte de Ingles', 'Contenido del apunte...');
+INSERT INTO apuntes (id_usuario, titulo, contenido)
+VALUES (2, 'Apunte de Ingles', 'Contenido del apunte...');
+INSERT INTO apuntes (id_usuario, titulo, contenido)
+VALUES (3, 'Apunte de Fisica', 'Contenido del apunte...');
+
+/*
+-- Editamos el apunte
+UPDATE apuntes
+SET contenido = 'Contenido actualizado del apunte'
+WHERE id_apunte = 2;
+*/
+
+-- Eliminamos un apunte
+-- DELETE FROM apuntes WHERE id_apunte = 2;
+
+-- Seleccionamos los apuntes de un usuario
+SELECT * FROM apuntes;
