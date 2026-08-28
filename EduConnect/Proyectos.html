@@ -6,32 +6,45 @@
     <link rel="stylesheet" href="style.css">
     <title>Proyectos - EduConnect</title>
 </head>
-<body>
 
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="Recursos.html">Recursos Educativos</a>
-        <a href="Calendario.html">Calendarios</a>
-        <a href="Apuntes.html">Apuntes</a>
-        <a href="Proyectos.html">Proyectos</a>
-    </nav>
+    <body>
+
+        <header class="barra">
+                <nav>
+                    <div class="nav-logo">
+                        <img src="images/EduConnectLogo.png" class="logo" alt="Imagen de EduConnect">
+                    </div>
+                        <div class="nav-formulario">
+                            <ul>
+                                <li><a href="Register.html" class="registro">Registro</a></li>
+                                <li><a href="Login.html">Iniciar Sesión</a></li>
+                            </ul>
+                        </div>
+                    <ul class="nav-enlaces">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="Recursos.html">Archivos</a></li>
+                        <li><a href="Calendario.html">Calendarios</a></li>
+                        <li><a href="Apuntes.html">Apuntes</a></li>
+                        <li><a href="Proyectos.html">Proyectos</a></li>
+                    </ul>
+                </nav>    
+            </header>
     
-    <header>
-        <h1>Proyectos</h1>
-        <p>Bienvenido a la sección de Proyectos de EduConnect, donde podrás explorar los proyectos desarrollados por estudiantes</p>
-        <p>Aquí encontrarás información detallada sobre cada proyecto.</p>
-    </header>
+        <header>
+            <h1>Proyectos</h1>
+            <p>Bienvenido a la sección de Proyectos de EduConnect, donde podrás explorar los proyectos desarrollados por estudiantes</p>
+            <p>Aquí encontrarás información detallada sobre cada proyecto.</p>
+        </header>
 
-    <div class="proyectos" id="proyecto">
-        <h3>Proyectos subidos</h3>
-        <button onclick="subirMaterial('Subir proyecto')">Subir Proyecto</button>
-        <button onclick="subirMaterial('Borrar proyecto')">Borrar Proyecto</button>
-    </div>
+        <div class="proyectos" id="proyecto">
+            <h3>Proyectos subidos</h3>
+            <button onclick="subirMaterial('Subir proyecto')">Subir Proyecto</button>
+            <button onclick="subirMaterial('Borrar proyecto')">Borrar Proyecto</button>
+        </div>
 
-    <footer>
-        <p>EduConnect - Grupo: 3MC Tecnología de la información - 15/04/2026 - Asignatura: Programación Full Stack </p>
-        <p>Gracias por visitar EduConnect</p>
-    </footer>
-
-</body>
+        <footer>
+            <p>EduConnect - Grupo: 3MC Tecnología de la información - 15/04/2026 - Asignatura: Programación Full Stack </p>
+            <p>Gracias por visitar EduConnect</p>
+        </footer>
+    </body>
 </html>

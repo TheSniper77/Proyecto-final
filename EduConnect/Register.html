@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es">    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>EduConnect</title>
-        <link rel="icon" type="image/jpg" href="images/EduConnectIcono.jpg">
+        <title>Registro - EduConnect</title>
     </head>
 
     <body>
 
-        <header class="barra">
+            <header class="barra">
                 <nav>
                     <div class="nav-logo">
                         <img src="images/EduConnectLogo.png" class="logo" alt="Imagen de EduConnect">
@@ -32,15 +31,32 @@
             </header>
 
             <header>
-                <h1>EduConnect</h1>
-                <p>Bienvenido a EduConnect, la plataforma educativa que conecta estudiantes y profesores</p>
-                <p>En EduConnect podrás acceder archivos, gestionar un calendario para tus eventos importantes, apuntes y proyectos de finales de curso</p>
+                <h1>Registro de Usuario</h1>
+                <p>Bienvenido a la sección de registro de EduConnect, donde podrás crear una cuenta para acceder a todas las funcionalidades de la plataforma.</p>
             </header>
 
-            <footer>
-                <p>EduConnect - Grupo: 3MC Tecnología de la información - 15/04/2026 </p>
-                <p>Gracias por visitar EduConnect</p>
-            </footer>
+        <main class="contenedor">
+            <div class="registro">
+                <h2>Crear Cuenta</h2>
+                <form>
+                    <div class="user">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" id="usuario" required>
+                    </div>
 
+                    <div class="email">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="email" id="correo" required>
+                    </div>
+
+                    <div class="pass">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" required>
+                    </div>
+
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </main>
     </body>
 </html>
