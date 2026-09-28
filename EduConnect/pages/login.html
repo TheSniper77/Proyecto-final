@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Iniciar Sesión - EduConnect</title>
+    </head>
+    
+        <body>
+
+            <header class="barra">
+                <nav>
+                    <div class="nav-logo">
+                        <img src="../images/EduConnectLogo.png" class="logo" alt="Imagen de EduConnect">
+                    </div>
+                        <div class="nav-formulario">
+                            <ul>
+                                <li><a href="register.html" class="registro">Registro</a></li>
+                                <li><a href="login.html">Iniciar Sesión</a></li>
+                                <li><a href="../php/logout.php">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    <ul class="nav-enlaces">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="archivo.php">Archivo</a></li>
+                        <li><a href="calendario.html">Calendario</a></li>
+                        <li><a href="apunte.html">Apunte</a></li>
+                    </ul>
+                </nav>    
+            </header>
+
+                <header>
+                    <h1>Inicio de Sesión</h1>
+                    <p>Bienvenido a la sección de inicio de sesión de EduConnect, donde podrás acceder a tu cuenta y disfrutar de todas las funcionalidades de la plataforma.</p>
+                </header>
+
+            <main class="contenedor">
+                <div class="login">
+                        <h2>Inicio de Sesión</h2>
+                    <form action="../php/Login.php" method="POST">
+                        <div class="email">
+                            <label for="usuario">Usuario</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+                        </div>
+
+                        <div class="pass">
+                            <label for="clave">Contraseña</label>
+                            <input type="password" id="clave" name="clave" placeholder="Contraseña" required>
+                            <!--<span class="eye" id="eye">&#xF441;</span>-->
+                        </div>
+
+                        <button type="submit">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </main>
+        </body>
+</html>
