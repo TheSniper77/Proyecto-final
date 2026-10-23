@@ -1,34 +1,17 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Archivos - EduConnect</title>
 </head>
 
     <body>
 
-        <header class="barra">
-                <nav>
-                    <div class="nav-logo">
-                        <img src="../images/EduConnectLogo.png" class="logo" alt="Imagen de EduConnect">
-                    </div>
-                        <div class="nav-formulario">
-                            <ul>
-                                <li><a href="register.html" class="registro">Registro</a></li>
-                                <li><a href="login.html">Iniciar Sesión</a></li>
-                                <li><a href="../php/logout.php">Cerrar Sesión</a></li>
-                            </ul>
-                        </div>
-                    <ul class="nav-enlaces">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="archivo.php">Archivo</a></li>
-                        <li><a href="calendario.html">Calendario</a></li>
-                        <li><a href="apunte.html">Apunte</a></li>
-                    </ul>
-                </nav>    
-        </header>
+        <?php include "../include/menu.php"; ?>
 
         <header>
             <h1>Archivos</h1>
@@ -57,13 +40,13 @@
                 <?php } ?>
 
                 </div>
-            <form action="../php/subir.php" method="POST" enctype="multipart/form-data">
+            <form action="/php/subir.php" method="POST" enctype="multipart/form-data">
                 <label for="archivo">Selecciona un archivo:</label>
                 <input type="file" name="archivo" required>
                 <button type="submit" name="Subir">Subir Archivo</button>
             </form>
 
-            <form action="../php/mostrar.php" method="POST">
+            <form action="/php/mostrar.php" method="POST">
                 <button type="submit" name="Mostrar">Mostrar Archivos</button>
             </form>
         </div>
